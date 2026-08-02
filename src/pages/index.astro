@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-const pageTitle = "nyxbug404";
+import { SITE_NAME } from '../siteConfig.js';
+const pageTitle = SITE_NAME;
 ---
 
 <html lang="en">
@@ -15,7 +15,7 @@ const pageTitle = "nyxbug404";
 
 <body class="landing-body">
 	<div class="landing-container">
-		<h1>Welcome to the nyxbug404 Hub</h1>
+		<h1>Welcome to the {SITE_NAME} Hub</h1>
 		<p class="subtitle">Select a portal to begin:</p>
 
 		<div class="button-grid">

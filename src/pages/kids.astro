@@ -1,37 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const pageTitle = "nyxbug404 | Kids";
+import { SITE_NAME } from '../siteConfig.js';
+const pageTitle = `${SITE_NAME} | Kids`;
 ---
 
-<html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>{pageTitle}</title>
-	<link rel="stylesheet" href="/style.css">
-</head>
-
-<body>
-	<header>
+<Layout title={pageTitle}>
+	<header class="content-sub-header">
 		<a href="/" class="back-link">&larr; Back to Hub</a>
-		<span style="font-weight: 600; color: #888;">nyxbug404 Kids</span>
+		<span style="font-weight: 600; color: #888;">{SITE_NAME} | Kids</span>
 	</header>
 
 	<div class="page-shell">
 		<aside class="sidebar">
 			<div class="sidebar-title">Explore</div>
 			<a href="#top">↑ Top of Page</a>
-			<a href="#books">Books &amp; Readers</a>
-			<a href="#games">Card &amp; Board Games</a>
+			<a href="#books">Books</a>
+			<a href="#games">Games</a>
 			<a href="#incogni-tails-jr"
 				style="padding: 0.3rem 0 0.3rem 1.5rem; line-height: 1.2; font-size: 0.9rem;">└── Incogni Tails JR</a>
 			<a href="#incogni-tails" style="padding: 0.3rem 0 0.3rem 1.5rem; line-height: 1.2; font-size: 0.9rem;">└──
 				Incogni Tails</a>
-			<a href="#videos">Videos &amp; Stories</a>
+			<a href="#videos">Videos</a>
 			<a href="#merch">Merch</a>
-			<a href="about.html">About nyxbug404</a>
+			<a href="about.html">About {SITE_NAME}</a>
 		</aside>
 
 		<main>
@@ -323,6 +314,4 @@ const pageTitle = "nyxbug404 | Kids";
 			</section>
 		</main>
 	</div>
-</body>
-
-</html>
+</Layout>

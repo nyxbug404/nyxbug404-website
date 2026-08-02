@@ -1,22 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const pageTitle = "nyxbug404 | About";
+import { SITE_NAME } from '../siteConfig.js';
+const pageTitle = `${SITE_NAME} | About`;
 ---
-
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-
-<body>
-    <header>
+<Layout title={pageTitle}>
+	<header class="content-sub-header">
         <a href="/" class="back-link">&larr; Back to Hub</a>
-        <span style="font-weight: 600; color: #888;">nyxbug404 Creator</span>
+        <span style="font-weight: 600; color: #888;">{SITE_NAME} Creator</span>
     </header>
 
     <div class="page-shell">
@@ -77,6 +67,4 @@ const pageTitle = "nyxbug404 | About";
     </div>
 
 
-</body>
-
-</html>
+</Layout>

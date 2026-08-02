@@ -306,3 +306,22 @@ h2 {
     color: #ffffff;
     text-align: center;
 }
+
+@media (max-width: 767px) {
+    /* Hides the old desktop sub-header on mobile since it's now in the fixed top bar */
+    .content-sub-header, 
+    body > header:not(.mobile-header) {
+        display: none !important;
+    }
+
+    /* Hide the left sidebar completely on mobile screens */
+    .sidebar {
+        display: none !important;
+    }
+
+    /* Adjust the main content layout shell since the sidebar is gone on mobile */
+    .page-shell {
+        display: block !important;
+        padding: 1rem !important;
+    }
+}
