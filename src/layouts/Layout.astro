@@ -1,23 +1,112 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="stylesheet" href="/style.css">
+        <title>Astro Basics</title>
+    </head>
+    <body>
+
+        <header class="mobile-header">
+            <a href="/" class="logo">NyxBug404</a>
+            <button id="menu-toggle" aria-label="Toggle navigation menu">
+                ☰ Menu
+            </button>
+        </header>
+
+        <nav id="nav-menu" class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/adults">Adults</a>
+            <a href="/kids">Kids</a>
+        </nav>
+
+        <slot />
+
+        <script>
+            const toggleButton = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (toggleButton && navMenu) {
+                toggleButton.addEventListener('click', () => {
+                    navMenu.classList.toggle('is-open');
+                });
+            }
+        </script>
+    </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* --- Mobile Navigation Styles --- */
+    .mobile-header {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    @media (max-width: 767px) {
+        .mobile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #111;
+            color: #fff;
+            padding: 0.75rem 1rem;
+        }
+
+        .mobile-header .logo {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #menu-toggle {
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background: #1a1a1a;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom: 1px solid #333;
+        }
+
+        .nav-links.is-open {
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #fff;
+            padding: 0.75rem 0;
+            text-decoration: none;
+        }
+    }
 </style>
