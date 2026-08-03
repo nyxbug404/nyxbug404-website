@@ -137,9 +137,14 @@ const { title } = Astro.props;
             text-decoration: none;
         }
 
+        body {
+            padding-top: 60px !important;
+            box-sizing: border-box;
+        }
+
         header:not(.mobile-header),
         .content-sub-header {
-            margin-top: 60px !important;
+            margin-top: 0 !important;
         }
     }
 </style>
