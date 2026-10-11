@@ -4,10 +4,17 @@ import { SITE_NAME } from '../siteConfig.js';
 const pageTitle = `${SITE_NAME} | About`;
 ---
 <Layout title={pageTitle}>
-	<header class="content-sub-header">
-        <a href="/" class="back-link">&larr; Back to Hub</a>
-        <span style="font-weight: 600; color: #888;">{SITE_NAME} | Creator</span>
-    </header>
+<header class="content-sub-header" style="display: flex; justify-content: space-between; align-items: center; position: relative;">
+		<a href="/" class="back-link">&larr; Back to Hub</a>
+		
+		<div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center;">
+			<a href="/">
+				<img src="/favicon.svg" alt="NyxBug404 Logo" class="site-header-logo" />
+			</a>
+		</div>
+
+		<span style="font-weight: 600; color: #888;">{SITE_NAME} | Creator</span>
+	</header>
 
     <div class="page-shell">
         <aside class="sidebar">

@@ -17,9 +17,11 @@ const { title } = Astro.props;
 
 <body>
 
-    <header class="mobile-header">
-        <a href="/" class="logo">&larr; Hub</a>
-        <span class="mobile-page-title">{title || SITE_NAME}</span>
+<header class="mobile-header">
+        <a href="/" class="back-link-mobile">&larr; Hub</a>
+        <a href="/" class="centered-logo-link">
+            <img src="/favicon.svg" alt="NyxBug404 Logo" class="site-header-logo" />
+        </a>
         <button id="menu-toggle" aria-label="Toggle navigation menu">
             ☰
         </button>
@@ -80,6 +82,26 @@ const { title } = Astro.props;
         display: none;
     }
 
+.site-header-logo {
+        height: 80px;
+        width: 80px;
+        object-fit: contain;
+    }
+
+    .back-link-mobile {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .centered-logo-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     @media (max-width: 767px) {
         .mobile-header {
             display: flex;

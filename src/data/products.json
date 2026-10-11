@@ -1,0 +1,172 @@
+[
+  {
+    "conceptKey": "youth-t",
+    "title": "Squirrel vs Sloth Energy Tug-of-War",
+    "targetAudience": "kids",
+    "conceptDescription": "When big physical play energy crashes head-on into the need for quiet, familiar comfort. Featuring an adorably stressed squirrel and a blissfully unbothered sloth.<br><br>Printed on the Gildan 5000B Kids Heavy Cotton Tee.",
+    "thumbnail": "/images/products/youth-t-kids-full-color.png",
+    "variants": [
+      {
+        "style": "Full Color",
+        "thumbnail": "/images/products/youth-t-kids-full-color.png",
+        "printifyUrl": "https://merch.nyxbug404.com/product/32955183",
+        "colors": [
+          {
+            "name": "Red",
+            "hex": "#C62A32"
+          },
+          {
+            "name": "Black",
+            "hex": "#000000"
+          },
+          {
+            "name": "Orange",
+            "hex": "#EA5F22"
+          },
+          {
+            "name": "White",
+            "hex": "#ffffff"
+          },
+          {
+            "name": "Heliconia",
+            "hex": "#DF5086"
+          },
+          {
+            "name": "Lime",
+            "hex": "#9EC46C"
+          },
+          {
+            "name": "Daisy",
+            "hex": "#fed141"
+          },
+          {
+            "name": "Sapphire",
+            "hex": "#0080b5"
+          },
+          {
+            "name": "Ash",
+            "hex": "#F6F6F6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "conceptKey": "unisex-t",
+    "title": "Squirrel vs Sloth Energy Tug-of-War",
+    "targetAudience": "adults",
+    "conceptDescription": "When the high-energy drive for physical adventure collides head on with the desire for quiet, familiar comfort. Featuring an adorably stressed squirrel and a blissfully unbothered sloth.<br><br>Printed on the Bella+Canvas 3001 Unisex Tee.",
+    "thumbnail": "/images/products/unisex-t-adults-full-color.png",
+    "variants": [
+      {
+        "style": "Full Color",
+        "thumbnail": "/images/products/unisex-t-adults-full-color.png",
+        "printifyUrl": "https://merch.nyxbug404.com/product/32903286",
+        "colors": [
+          {
+            "name": "Aqua",
+            "hex": "#348FB8"
+          },
+          {
+            "name": "Berry",
+            "hex": "#C13969"
+          },
+          {
+            "name": "Black",
+            "hex": "#000000"
+          },
+          {
+            "name": "Burnt Orange",
+            "hex": "#e6814a"
+          },
+          {
+            "name": "Canvas Red",
+            "hex": "#961623"
+          },
+          {
+            "name": "Leaf",
+            "hex": "#528A4B"
+          },
+          {
+            "name": "Maize Yellow",
+            "hex": "#F8DE6F"
+          },
+          {
+            "name": "Team Purple",
+            "hex": "#3C1F66"
+          },
+          {
+            "name": "Solid Athletic Grey",
+            "hex": "#cfcfcf"
+          }
+        ]
+      },
+      {
+        "style": "White Art",
+        "thumbnail": "/images/products/unisex-t-adults-white-art.png",
+        "printifyUrl": "https://merch.nyxbug404.com/product/32679517",
+        "colors": [
+          {
+            "name": "Dark Grey Heather",
+            "hex": "#1C1B1C"
+          },
+          {
+            "name": "Heather Deep Teal",
+            "hex": "#4D7C8C"
+          },
+          {
+            "name": "Heather Forest",
+            "hex": "#394E38"
+          },
+          {
+            "name": "Heather Raspberry",
+            "hex": "#D56280"
+          },
+          {
+            "name": "Heather Team Purple",
+            "hex": "#83558A"
+          },
+          {
+            "name": "Heather Clay",
+            "hex": "#D27B66"
+          }
+        ]
+      },
+      {
+        "style": "Black Art",
+        "thumbnail": "/images/products/unisex-t-adults-black-art.png",
+        "printifyUrl": "https://merch.nyxbug404.com/product/32679507",
+        "colors": [
+          {
+            "name": "Athletic Heather",
+            "hex": "#C7C7C5"
+          },
+          {
+            "name": "Heather Blue",
+            "hex": "#BABCD4"
+          },
+          {
+            "name": "Heather Mint",
+            "hex": "#BBE1CA"
+          },
+          {
+            "name": "Heather Yellow Gold",
+            "hex": "#FFC74C"
+          },
+          {
+            "name": "Heather Peach",
+            "hex": "#FFCAAC"
+          },
+          {
+            "name": "Heather Bubble Gum",
+            "hex": "#FFCCE9"
+          },
+          {
+            "name": "Heather Cement",
+            "hex": "#F7F4EF"
+          }
+        ]
+      }
+    ]
+  }
+]

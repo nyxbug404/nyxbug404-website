@@ -1,0 +1,155 @@
+---
+import productsData from '../data/products.json';
+
+const { audience = 'kids' } = Astro.props;
+const items = productsData.filter(p => p.targetAudience === audience);
+---
+
+<div class="card-grid">
+  {items.length === 0 ? (
+    <div class="content-card coming-soon">
+      <div class="thumbnail-box">
+        <span>More Gear on the Way</span>
+      </div>
+      <h3 class="card-title">Coming Soon</h3>
+      <p class="card-text">We're working on new items for this collection.</p>
+    </div>
+  ) : (
+    items.map(product => (
+      <div class="content-card" data-thumbnails={JSON.stringify(product.variants.map(v => v.thumbnail))}>
+        {/* Default thumbnail */}
+        <div 
+          class="thumbnail-box thumbnail-container" 
+          style={`background-image: url('${product.thumbnail}');`}
+        >
+          <span style="display: none;">{product.title}</span>
+        </div>
+        
+        <h3 class="card-title">{product.title}</h3>
+        
+        <p class="card-text" set:html={product.conceptDescription} />
+
+        {/* Vertically Stacked Style Variant Buttons with Color Swatches */}
+        <div class="variant-button-container" style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
+          {product.variants.map((variant, index) => {
+            const buttonText = product.variants.length === 1 
+              ? "Buy on Printify" 
+              : `Buy ${variant.style} on Printify`;
+
+            return (
+              <a 
+                href={variant.printifyUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class={`action-btn style-trigger ${index === 0 ? 'active-variant' : ''}`}
+                style="text-align: center; font-size: 0.85rem; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 0.3rem; padding: 0.6rem;"
+                data-thumbnail={variant.thumbnail}
+              >
+                <span>{buttonText}</span>
+                
+                {/* Color Swatch Circles inside the button */}
+                {variant.colors && variant.colors.length > 0 && (
+                  <div class="button-swatch-container">
+                    {variant.colors.map(color => (
+                      <span 
+                        class="color-circle" 
+                        style={`background-color: ${color.hex};`} 
+                        title={color.name}
+                      ></span>
+                    ))}
+                  </div>
+                )}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    ))
+  )}
+</div>
+
+<style>
+  .button-swatch-container {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .color-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: inline-block;
+  }
+</style>
+
+{/* Auto-cycling and hover-locking thumbnail script */}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.content-card');
+
+    cards.forEach(card => {
+      const thumbnailBox = card.querySelector('.thumbnail-box') as HTMLElement;
+      const buttons = card.querySelectorAll('.style-trigger');
+      
+      // Read the list of variant thumbnails stored on the card container
+      const rawThumbnails = card.getAttribute('data-thumbnails');
+      if (!rawThumbnails || !thumbnailBox) return;
+
+      const thumbnails: string[] = JSON.parse(rawThumbnails);
+      
+      // Only auto-cycle if there's more than one thumbnail option
+      if (thumbnails.length <= 1) return;
+
+      let currentIndex = 0;
+      let intervalId: number | null = null;
+      let isHovered = false;
+
+      const showImage = (index: number) => {
+        if (thumbnailBox) {
+          thumbnailBox.style.backgroundImage = `url('${thumbnails[index]}')`;
+        }
+      };
+
+      const startCycle = () => {
+        if (intervalId !== null) return;
+        intervalId = window.setInterval(() => {
+          if (!isHovered) {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            showImage(currentIndex);
+          }
+        }, 1500);
+      };
+
+      const stopCycle = () => {
+        if (intervalId !== null) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+      };
+
+      card.addEventListener('mouseenter', () => {
+        isHovered = true;
+        stopCycle();
+      });
+
+      card.addEventListener('mouseleave', () => {
+        isHovered = false;
+        startCycle();
+      });
+
+      buttons.forEach((btn, index) => {
+        btn.addEventListener('mouseenter', () => {
+          stopCycle();
+          currentIndex = index;
+          showImage(currentIndex);
+        });
+      });
+
+      startCycle();
+    });
+  });
+</script>

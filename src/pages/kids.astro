@@ -1,12 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { SITE_NAME } from '../siteConfig.js';
+import MerchGrid from '../components/MerchGrid.astro';
 const pageTitle = `${SITE_NAME} | Kids`;
 ---
 
 <Layout title={pageTitle}>
-	<header class="content-sub-header">
+<header class="content-sub-header" style="display: flex; justify-content: space-between; align-items: center; position: relative;">
 		<a href="/" class="back-link">&larr; Back to Hub</a>
+		
+		<div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center;">
+			<a href="/">
+				<img src="/favicon.svg" alt="NyxBug404 Logo" class="site-header-logo" />
+			</a>
+		</div>
+
 		<span style="font-weight: 600; color: #888;">{SITE_NAME} | Kids</span>
 	</header>
 
@@ -295,22 +303,7 @@ const pageTitle = `${SITE_NAME} | Kids`;
 
 			<section id="merch">
 				<h2>Merchandise</h2>
-				<div class="card-grid">
-					<div class="content-card coming-soon">
-						<div class="thumbnail-box">
-							<svg class="card-icon" width="40" height="40" viewBox="0 0 24 24" fill="none"
-								stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-								<path
-									d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z">
-								</path>
-							</svg>
-							<span>Character Gear</span>
-						</div>
-						<h3 class="card-title">Character Shirts & Goods</h3>
-						<p class="card-text">Fun, character-themed apparel and items coming down the road.</p>
-						<span class="action-btn" style="background-color: #222; cursor: default;">Coming Soon</span>
-					</div>
-				</div>
+				<MerchGrid audience="kids" />
 			</section>
 		</main>
 	</div>
