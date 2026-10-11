@@ -5,9 +5,10 @@ import MerchGrid from '../components/MerchGrid.astro';
 const pageTitle = `${SITE_NAME} | Adults`;
 ---
 <Layout title={pageTitle}>
-<header class="content-sub-header" style="display: flex; justify-content: space-between; align-items: center; position: relative;">
+	<header class="content-sub-header"
+		style="display: flex; justify-content: space-between; align-items: center; position: relative;">
 		<a href="/" class="back-link">&larr; Back to Hub</a>
-		
+
 		<div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center;">
 			<a href="/">
 				<img src="/favicon.svg" alt="NyxBug404 Logo" class="site-header-logo" />
@@ -28,15 +29,16 @@ const pageTitle = `${SITE_NAME} | Adults`;
 			<a href="#videos">Videos</a>
 			<a href="#merch">Merch</a>
 			<a href="about.html">About {SITE_NAME}</a>
-			
+
 		</aside>
 
 		<main>
 			<section id="adults-zone" class="hero-section">
 				<h1>Adults Portal</h1>
 				<p class="hero-subtitle">
-					Functional daily planners, card games, gameplay videos, and merch built for busy minds and creative organizers. Just practical things designed to help tame the chaos.	
-				
+					Functional daily planners, card games, gameplay videos, and merch built for busy minds and creative
+					organizers. Just practical things designed to help tame the chaos.
+
 				</p>
 
 			</section>
@@ -84,11 +86,22 @@ const pageTitle = `${SITE_NAME} | Adults`;
 					<span>Merch</span>
 				</a>
 			</nav>
-
 			<section id="books">
 				<h2>Books</h2>
-				<div class="card-grid">
 
+				<!-- Section Intro with Context and Link -->
+				<div class="section-intro" style="margin-top: 1rem; margin-bottom: 2rem;">
+					<p style="color: #a0a0a0; margin: 0 0 0.5rem 0; font-size: 0.95rem; line-height: 1.4;">
+						Browse the full collection of daily planners, activity books, and children's titles directly on
+						Amazon KDP:
+					</p>
+					<a href="https://books.nyxbug404.com" target="_blank" rel="noopener"
+						style="font-family: monospace; color: #4da6ff; text-decoration: none; font-size: 1rem; font-weight: 600; display: inline-block;">
+						books.nyxbug404.com &rarr;
+					</a>
+				</div>
+
+				<div class="card-grid">
 					<div class="content-card">
 						<div class="thumbnail-box"
 							style="background-image: url('/images/DoodlePlanner_Animals_Volume_1_Thumbnail.jpg');">
@@ -98,17 +111,28 @@ const pageTitle = `${SITE_NAME} | Adults`;
 							The Doodle Anchor<br>Organizing Your Day & Mind<br>
 							<span class="card-subtitle">Animal Edition Volume 1</span>
 						</h3>
-						<p class="card-text">Stop the swirling chaos and find your anchor. A functional daily system featuring Morning, Afternoon, and Night blocks, a "Top 3" priority focus, health/symptom tracking, a brain dump, and a daily 3-step animal drawing tutorial with fun facts to reward your routine.</p>
+						<p class="card-text">Stop the swirling chaos and find your anchor. A functional daily system
+							featuring Morning, Afternoon, and Night blocks, a "Top 3" priority focus, health/symptom
+							tracking, a brain dump, and a daily 3-step animal drawing tutorial with fun facts to reward
+							your routine.</p>
 						<a href="https://www.amazon.com/dp/B0GZKJ1Q5Q" target="_blank" class="action-btn">Buy on Amazon
 							KDP</a>
 					</div>
-
 				</div>
 			</section>
 
 			<section id="games">
 				<h2>Games</h2>
-
+				<!-- Section Intro with Context and Link -->
+				<div class="section-intro" style="margin-top: 1rem; margin-bottom: 2rem;">
+					<p style="color: #a0a0a0; margin: 0 0 0.5rem 0; font-size: 0.95rem; line-height: 1.4;">
+						Explore print-on-demand tabletop card games and expansions directly on The Game Crafter:
+					</p>
+					<a href="https://games.nyxbug404.com" target="_blank" rel="noopener"
+						style="font-family: monospace; color: #4da6ff; text-decoration: none; font-size: 1rem; font-weight: 600; display: inline-block;">
+						games.nyxbug404.com &rarr;
+					</a>
+				</div>
 
 				<h3 id="incogni-tails" class="subsection-title"
 					style="color: #fff; margin: 3rem 0 1rem 0; font-size: 1.4rem;">Incogni
@@ -160,6 +184,16 @@ const pageTitle = `${SITE_NAME} | Adults`;
 
 			<section id="videos">
 				<h2>Videos</h2>
+<!-- Section Intro with Context and Link -->
+				<div class="section-intro" style="margin-top: 1rem; margin-bottom: 2rem;">
+					<p style="color: #a0a0a0; margin: 0 0 0.5rem 0; font-size: 0.95rem; line-height: 1.4;">
+						Watch behind-the-scenes game development, tech tutorials, project logs, and gaming content on YouTube:
+					</p>
+					<a href="https://videos.nyxbug404.com" target="_blank" rel="noopener"
+						style="font-family: monospace; color: #4da6ff; text-decoration: none; font-size: 1rem; font-weight: 600; display: inline-block;">
+						videos.nyxbug404.com &rarr;
+					</a>
+				</div>
 				<div class="card-grid">
 					<div class="content-card coming-soon">
 						<div class="thumbnail-box">
@@ -181,6 +215,16 @@ const pageTitle = `${SITE_NAME} | Adults`;
 
 			<section id="merch">
 				<h2>Merchandise</h2>
+				<!-- Section Intro with Context and Link -->
+				<div class="section-intro" style="margin-top: 1rem; margin-bottom: 2rem;">
+					<p style="color: #a0a0a0; margin: 0 0 0.5rem 0; font-size: 0.95rem; line-height: 1.4;">
+						Browse minimalist line-art apparel, custom accessories, and gear in our print shop:
+					</p>
+					<a href="https://merch.nyxbug404.com" target="_blank" rel="noopener"
+						style="font-family: monospace; color: #4da6ff; text-decoration: none; font-size: 1rem; font-weight: 600; display: inline-block;">
+						merch.nyxbug404.com &rarr;
+					</a>
+				</div>
 				<MerchGrid audience="adults" />
 			</section>
 		</main>
